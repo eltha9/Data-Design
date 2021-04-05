@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "grotesk";
+    src: url("./assets/fonts/HKGrotesk-Regular.otf");
+    font-weight: normal;
+}
+/* @font-face {
+    font-family: "grotesk";
+    src: url("./assets/fonts/HKGrotesk-Bold.otf");
+    font-weight: bolder;
+}
+@font-face {
+    font-family: "grotesk";
+    src: url("./assets/fonts/HKGrotesk-SemiBold.otf");
+    font-weight: bold;
+} */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
