@@ -1,6 +1,6 @@
 <template>
     <div class="cityStat">
-        <h2 class="w-8/12 mb-4">{{title}} {{city}}</h2>
+        <h2 class="w-10/12 mb-4">{{title}} {{city}}</h2>
 
     </div>
 </template>
