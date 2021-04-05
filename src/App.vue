@@ -1,7 +1,7 @@
 <template>
   
   <main class="px-20 mt-10 font-grotesk" >
-    <div class="container">
+    <div class="">
 
       <Header/>
       <Stats/>
@@ -19,5 +19,4 @@ document.title = "CocoData";
 
 </script>
 <style>
-
 </style>

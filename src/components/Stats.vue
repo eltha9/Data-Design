@@ -21,9 +21,6 @@ import CityStat from './SubStats/CityStat.vue'
   @apply grid grid-cols-2 gap-x-6;
   margin-bottom: 4.5rem;
 }
-h2{
-  @apply font-bold text-2xl;
-}
 
 .mini-card{
     @apply text-base flex items-center border-purple-100 rounded border px-2 py-1 mr-4;
