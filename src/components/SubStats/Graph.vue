@@ -45,6 +45,13 @@
 <script setup>
 import * as d3 from "d3"
 
+let graph = d3.select('#graph .graph').append('svg')
+graph.append("rect")
+    .attr("x",20)
+    .attr("y",20)
+    .attr("width",200)
+    .attr("height",50);
+
 </script>
 
 <style scoped>
