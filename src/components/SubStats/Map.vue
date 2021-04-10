@@ -1,5 +1,5 @@
 <template>
-    <section id="map" class="flex">
+    <section id="map" class="flex shadoer">
         <div class="map-info w-4/12 mr-6">
             <h2>Cartes des différentes villes françaises et de leur taux de pollution en période couvre feu</h2>
         </div>

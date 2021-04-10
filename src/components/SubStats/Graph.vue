@@ -1,5 +1,5 @@
 <template>
-    <section id="graph" class="w-12/12 p-8 border-purple-100 rounded-2xl border-2">
+    <section id="graph" class="w-12/12 p-8 border-purple-100 rounded-2xl border-2 shadoer">
         <div class="graph-info flex justify-between">
             <h2 class="w-4/12 ">Evolution des pollutants dans l’air en France depuis le COVID-19 </h2>
             <div class="text-right"> 
@@ -36,22 +36,36 @@
                 
             </div>
         </div>
-        <div class="graph w-12/12 h">
+        <div class="graph w-12/12 ">
 
         </div>
     </section>
 </template>
 
-<script setup>
+<script>
 import * as d3 from "d3"
 
-let graph = d3.select('#graph .graph').append('svg')
-graph.append("rect")
-    .attr("x",20)
-    .attr("y",20)
-    .attr("width",200)
-    .attr("height",50);
 
+export default{
+    mounted:function () {
+
+        let container = document.querySelector('#graph .graph')
+        
+        let graph = d3.select('#graph .graph')
+            .append('svg')
+            .attr("width", '100%')
+            .attr("height", '100%')
+            .attr('viewBox','0 0 '+Math.min(container.offsetWidth,container.offsetHeight)+' '+Math.min(container.offsetWidth, container.offsetHeight))
+            .attr('preserveAspectRatio','xMinYMin')
+        // graph.append("rect")
+        //     .attr("x",20)
+        //     .attr("y",20)
+        //     .attr("width", '100%')
+        //     .attr("height", '100%')
+        
+        
+    }
+}
 </script>
 
 <style scoped>
@@ -64,6 +78,16 @@ graph.append("rect")
 .info-line .title{
     /* font-size: 1.125rem; */
     margin-right: 1.5rem;
+}
+
+.graph{
+    margin-top: 4.5rem;
+    height: 492px;
+}
+
+section#graph .graph svg{
+    width: 100%;
+    height: 100%;
 }
 
 </style>

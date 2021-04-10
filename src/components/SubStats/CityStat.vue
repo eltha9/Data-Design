@@ -1,5 +1,5 @@
 <template>
-    <div class="cityStat">
+    <div class="cityStat shadoer">
         <h2 class="w-10/12 mb-4">{{title}} {{city}}</h2>
 
     </div>
