@@ -61,8 +61,8 @@ export default{
         //     .attr("x",20)
         //     .attr("y",20)
         //     .attr("width", '100%')
-        //     .attr("height", '100%')
-        
+            // .attr("height", '100%')
+
         
     }
 }
