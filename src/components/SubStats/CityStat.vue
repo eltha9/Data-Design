@@ -1,9 +1,9 @@
 <template>
     <div class="cityStat shadoer {{category}}">
         <h2 class="w-10/12 mb-4">{{title}} {{city}}</h2>
-        <div class="info-line flex items-center mb-4">
-            <span class="title mr-4">Périodes :</span>
-            <ul class="flex">
+        <div class="info-line flex items-center mb-8 text-black-300">
+            <span class="title mr-4 text-lg">Périodes :</span>
+            <ul class="flex ">
                 <li class="mini-card">
                     <span class="mini-card-color bg-purple-100  "></span>
                     <span class="mini-card-title">Actuellement</span>
@@ -18,21 +18,21 @@
             <div class="barchart no">
                 <div class="chart">
                     <div class="bar before rayure-no" style="height: 30%;" title="plop"></div>
-                    <div class="bar now" style="height: 20%;" title="pas plop"></div>
+                    <div class="bar now bg-purple-200" style="height: 20%;" title="pas plop"></div>
                 </div>
                 <h3>Monox. Azote</h3>
             </div>
             <div class="barchart pm25 ">
                 <div class="chart">
                     <div class="bar before rayure-pm25" style="height: 100%;" title="plop"></div>
-                    <div class="bar now" style="height: 20%;" title="pas plop"></div>
+                    <div class="bar now bgc-orange" style="height: 20%;" title="pas plop"></div>
                 </div>
                 <h3>PM - 2,5</h3>
             </div>
             <div class="barchart pm10 ">
                 <div class="chart">
                     <div class="bar before rayure-pm10" style="height: 100%;" title="plop"></div>
-                    <div class="bar now" style="height: 20%;" title="pas plop"></div>
+                    <div class="bar now bg-green-200" style="height: 20%;" title="pas plop"></div>
                 </div>
                 <h3>PM - 10</h3>
             </div>
@@ -94,6 +94,7 @@ export default{
 .bar-charts .barchart h3{
     margin-top: 24px;
     text-align: center;
+    @apply text-black-300 text-base;
 }
 .bar-charts .barchart .chart{
     flex:1;
@@ -118,7 +119,7 @@ export default{
     background-size: cover;
 }
 .bar-charts .barchart .chart .bar.now{
-    background-color: green;
+
 
 }
 
