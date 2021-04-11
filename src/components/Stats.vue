@@ -2,8 +2,8 @@
   <div class="stats">
       <Graph/>
       <section id="cityStats">
-          <CityStat city="Reims" title="La ville qui a le plus baissé ses polluants depuis la pandémie :"/>
-          <CityStat city="Paris" title="La ville qui a le plus augmenté ses polluants depuis la pandémie :"/>
+          <CityStat category="good" city="Reims" title="La ville qui a le plus baissé ses polluants depuis la pandémie :"/>
+          <CityStat category="bad" city="Paris" title="La ville qui a le plus augmenté ses polluants depuis la pandémie :"/>
       </section>
       <Map/>
   </div>
