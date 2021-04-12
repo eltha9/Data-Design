@@ -17,24 +17,24 @@
         <div class="bar-charts">
             <div class="barchart no">
                 <div class="chart">
-                    <div class="bar before rayure-no" style="height: 30%;" title="plop"></div>
-                    <div class="bar now bg-purple-200" style="height: 20%;" title="pas plop"></div>
+                    <div class="bar before rayure-no" :style="{height: values.values.co[1]/4+'%',}" :title="values.values.co[1] + ' mm-m3'"></div>
+                    <div class="bar now bg-purple-200" :style="{height: values.values.co[0]/4+'%',}" :title="values.values.co[0] + ' mm-m3'"></div>
                 </div>
-                <h3>Monox. Azote</h3>
+                <h3>CO</h3>
             </div>
             <div class="barchart pm25 ">
                 <div class="chart">
-                    <div class="bar before rayure-pm25" style="height: 100%;" title="plop"></div>
-                    <div class="bar now bgc-orange" style="height: 20%;" title="pas plop"></div>
+                    <div class="bar before rayure-pm25" :style="{height: values.values.pm25[1]*2+'%',}" :title="values.values.pm25[1] + ' µm-m3'"></div>
+                    <div class="bar now bg-orange" :style="{height: values.values.pm25[0]*2+'%',}" :title="values.values.pm25[0] + ' µm-m3'"></div>
                 </div>
                 <h3>PM - 2,5</h3>
             </div>
             <div class="barchart pm10 ">
                 <div class="chart">
-                    <div class="bar before rayure-pm10" style="height: 100%;" title="plop"></div>
-                    <div class="bar now bg-green-200" style="height: 20%;" title="pas plop"></div>
+                    <div class="bar before rayure-pm10" :style="{height: values.values.pm10[1]*2+'%',}" :title="values.values.pm10[1] + ' µm-m3'"></div>
+                    <div class="bar now bg-green-200" :style="{height: values.values.pm10[0]*2+'%',}" :title="values.values.pm10[0] + ' µm-m3'"></div>
                 </div>
-                <h3>PM - 10</h3>
+                <h3>PM - 10 </h3>
             </div>
         </div>
     </div>
@@ -45,6 +45,7 @@
 export default{
     city: "",
     title:"",
+    values: null, 
     props: {
         category: {
             type: String,
@@ -58,15 +59,11 @@ export default{
             type: String,
             required: true,
   	    },
+        values: {
+            type: Object,
+            required: true,
+  	    },
     },
-    mounted: function(){
-
-
-        // let chart_pm10 = document.querySelector(`.barchart.pm10`)
-        // let chart_pm25 = document.querySelector(`.barchart.pm25`)
-        // let chart_no = document.querySelector(`.barchart.no`)
-        // console.log(chart_pm10)
-    }
 }
 </script>
 

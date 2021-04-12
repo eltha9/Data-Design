@@ -42,7 +42,6 @@
 <script>
 import "leaflet/dist/leaflet.css"
 import { LMap, LTileLayer, LMarker, LIcon} from "@vue-leaflet/vue-leaflet";
-import { icon } from "leaflet";
 
 export default {
   name: "Map",

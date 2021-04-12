@@ -8,7 +8,7 @@
                     <ul class="flex">
                         <li class="mini-card">
                             <span class="mini-card-color bg-purple-200  "></span>
-                            <span class="mini-card-title">Monox. Azote</span>
+                            <span class="mini-card-title">CO</span>
                         </li>
                         <li class="mini-card">
                             <span class="mini-card-color bg-green-200  "></span>
@@ -49,6 +49,13 @@
 import Chart from 'chart.js/auto'
 
 export default{
+    values: null, 
+    props: {
+        values: {
+            type: Object,
+            required: true,
+  	    },
+    },
     mounted:function () {
         var ctx = document.getElementById('myChart');
         var myChart = new Chart(ctx, 
@@ -73,8 +80,8 @@ export default{
                     '03/2021',
                 ],
                 datasets: [{
-                        label: 'NO µm',
-                        data: [12, 19, 3, 5, 2, 3,1,8,9,10,11,12,12,15,18],
+                        label: 'CO mm-m3',
+                        data: this.values.co,
                         backgroundColor: [
                             '#A28AF0',
                         ],
@@ -85,8 +92,8 @@ export default{
                         tension:0.2
                     },
                     {
-                        label: ' PM-10 µm',
-                        data: [20, 5, 8, 5, 2, 3,8,8,5,10,14,1,3,15,5],
+                        label: ' PM-10 µm-m3',
+                        data: this.values.pm10,
                         backgroundColor: [
                             '#FDC096',
                         ],
@@ -97,8 +104,8 @@ export default{
                         tension:0.2
                     },
                     {
-                        label: ' PM-2.5 µm',
-                        data: [4, 7, 5, 8, 2, 1,0,0.5,8,10,11,5,12,15,2],
+                        label: ' PM-2.5 µm-m3',
+                        data: this.values.pm25,
                         backgroundColor: [
                             '#72DCB9',
                         ],
@@ -107,7 +114,20 @@ export default{
                         ],
                         borderWidth: 2,
                         tension:0.2
-                    }
+                    },
+                    {
+                        label: 'Confinement',
+                        fill:true,
+                        data: [,, 45, 45, 45, ,,,,,45,45,,,],
+                        backgroundColor: [
+                            'rgba(212,210,235,0.5)',
+                        ],
+                        borderColor: [
+                            'rgba(212,210,235,0.5)',
+                        ],
+                        borderWidth: 2,
+                        tension:0.2
+                    },
             ]   
             },
             options: {

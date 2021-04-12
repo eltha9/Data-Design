@@ -9,7 +9,7 @@
         </div>
         <div class="w-2/12 text-right text-black-300 font-bold">
             <span class="block">Mer. 24 mars 2021</span>
-            <span class="block">10h40</span>
+            <span class="block">10h00</span>
         </div>
     </div>
 </template>
