@@ -36,74 +36,87 @@
                 
             </div>
         </div>
-        <div class="graph w-12/12 hidden">
-           
+        <div class="graph w-12/12 ">
+           <canvas id="myChart" style="width: 100%;height: 100%;"></canvas>
         </div>
-        <div class="graph-fake w-12/12 ">
+        <div class="graph-fake w-12/12 hidden">
            <img src="../../assets/fake_graph.svg" alt="">
         </div>
     </section>
 </template>
 
 <script>
-import * as d3 from "d3"
+import Chart from 'chart.js/auto'
 
 export default{
-    poData:[10,20,30,25],
     mounted:function () {
-
-        let container = document.querySelector('#graph .graph')
-        
-        let graph = d3.select('#graph .graph')
-            .append('svg')
-            .attr("width", '100%')
-            .attr("height", '100%')
-            .attr('viewBox','0 0 '+Math.min(container.offsetWidth,container.offsetHeight)+' '+Math.min(container.offsetWidth, container.offsetHeight))
-            .attr('preserveAspectRatio','xMinYMin')
-
-        var xscale = d3.scaleLinear()
-            .domain([0, 30])
-            .range([0, container.offsetWidth - 100]);
-        // let startDate = new Date('01/01/2020')
-        // let endDate = new Date ('01/03/2021')
-        // var xscale = d3.scaleTime()
-        //     .domain([startDate.getMonth(), endDate.getMonth()] )
-        //     .range([startDate.getMonth(), endDate.getMonth()])
-        //     // .nice()z
-
-        var yscale = d3.scaleLinear()
-                .domain([0, 300])
-                .range([container.offsetHeight-30, 0]);
-
-        var x_axis = d3.axisBottom()
-                .scale(xscale);
-                // .tickFormat(function(d){
-                //     var seconds = d; 
-                // var final_seconds = seconds % 60;
-                // var minutes = (seconds - final_seconds) / 60;
-                // var tick_text = minutes.toString() + ":" + ("0" + final_seconds).slice(-2);
-                //     return tick_text;
-                // });
-
-        var y_axis = d3.axisLeft()
-                .scale(yscale);
-
-            graph.append("g")
-            .attr("transform", "translate(50, 10)")
-            .call(y_axis);
-
-        var xAxisTranslate = container.offsetHeight-30 + 10;
-
-        graph.append("g")
-        .attr("transform", "translate(50, " + xAxisTranslate  +")")
-        .call(x_axis)
-        // graph.append("rect")
-        //     .attr("x",20)
-        //     .attr("y",20)
-        //     .attr("width", '100%')
-            // .attr("height", '100%')
-
-        
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [
+                    '01/2020',
+                    '02/2020',
+                    '03/2020',
+                    '04/2020',
+                    '05/2020',
+                    '06/2020',
+                    '07/2020',
+                    '08/2020',
+                    '09/2020',
+                    '10/2020',
+                    '11/2020',
+                    '12/2020',
+                    '01/2021',
+                    '02/2021',
+                    '03/2021',
+                ],
+                datasets: [{
+                    label: 'NO µm',
+                    data: [12, 19, 3, 5, 2, 3,1,8,9,10,11,12,12,15,18],
+                    backgroundColor: [
+                        '#A28AF0',
+                    ],
+                    borderColor: [
+                        '#A28AF0',
+                    ],
+                    borderWidth: 2,
+                    tension:0.3
+                },
+                {
+                    label: ' PM-10 µm',
+                    data: [20, 5, 8, 5, 2, 3,8,8,5,10,14,1,3,15,5],
+                    backgroundColor: [
+                        '#FDC096',
+                    ],
+                    borderColor: [
+                        '#FDC096',
+                    ],
+                    borderWidth: 2,
+                    tension:0.3
+                },
+                {
+                    label: ' PM-2.5 µm',
+                    data: [4, 7, 5, 8, 2, 1,0,0.5,8,10,11,5,12,15,2],
+                    backgroundColor: [
+                        '#72DCB9',
+                    ],
+                    borderColor: [
+                        '#72DCB9',
+                    ],
+                    borderWidth: 2,
+                    tension:0.3
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+        });
     },
     
 }
@@ -122,11 +135,12 @@ export default{
 }
 
 .graph, .graph-fake{
+    position: relative;
     margin-top: 4.5rem;
     height: 492px;
 }
 
-section#graph .graph svg{
+section#graph .graph svg, section#graph .graph canvas{
     width: 100%;
     height: 100%;
 }
