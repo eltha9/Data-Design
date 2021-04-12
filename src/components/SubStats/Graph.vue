@@ -51,7 +51,8 @@ import Chart from 'chart.js/auto'
 export default{
     mounted:function () {
         var ctx = document.getElementById('myChart');
-        var myChart = new Chart(ctx, {
+        var myChart = new Chart(ctx, 
+        {
             type: 'line',
             data: {
                 labels: [
@@ -72,50 +73,53 @@ export default{
                     '03/2021',
                 ],
                 datasets: [{
-                    label: 'NO µm',
-                    data: [12, 19, 3, 5, 2, 3,1,8,9,10,11,12,12,15,18],
-                    backgroundColor: [
-                        '#A28AF0',
-                    ],
-                    borderColor: [
-                        '#A28AF0',
-                    ],
-                    borderWidth: 2,
-                    tension:0.3
+                        label: 'NO µm',
+                        data: [12, 19, 3, 5, 2, 3,1,8,9,10,11,12,12,15,18],
+                        backgroundColor: [
+                            '#A28AF0',
+                        ],
+                        borderColor: [
+                            '#A28AF0',
+                        ],
+                        borderWidth: 2,
+                        tension:0.2
+                    },
+                    {
+                        label: ' PM-10 µm',
+                        data: [20, 5, 8, 5, 2, 3,8,8,5,10,14,1,3,15,5],
+                        backgroundColor: [
+                            '#FDC096',
+                        ],
+                        borderColor: [
+                            '#FDC096',
+                        ],
+                        borderWidth: 2,
+                        tension:0.2
+                    },
+                    {
+                        label: ' PM-2.5 µm',
+                        data: [4, 7, 5, 8, 2, 1,0,0.5,8,10,11,5,12,15,2],
+                        backgroundColor: [
+                            '#72DCB9',
+                        ],
+                        borderColor: [
+                            '#72DCB9',
+                        ],
+                        borderWidth: 2,
+                        tension:0.2
+                    }
+            ]   
+            },
+            options: {
+                legend: {
+                    display:false
                 },
-                {
-                    label: ' PM-10 µm',
-                    data: [20, 5, 8, 5, 2, 3,8,8,5,10,14,1,3,15,5],
-                    backgroundColor: [
-                        '#FDC096',
-                    ],
-                    borderColor: [
-                        '#FDC096',
-                    ],
-                    borderWidth: 2,
-                    tension:0.3
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 },
-                {
-                    label: ' PM-2.5 µm',
-                    data: [4, 7, 5, 8, 2, 1,0,0.5,8,10,11,5,12,15,2],
-                    backgroundColor: [
-                        '#72DCB9',
-                    ],
-                    borderColor: [
-                        '#72DCB9',
-                    ],
-                    borderWidth: 2,
-                    tension:0.3
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
             }
-        }
         });
     },
     
