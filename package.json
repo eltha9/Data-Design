@@ -10,7 +10,8 @@
     "@vue-leaflet/vue-leaflet": "^0.6.0",
     "d3": "^6.6.2",
     "leaflet": "^1.7.1",
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "vue-d3-charts": "^0.2.8"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.1",
