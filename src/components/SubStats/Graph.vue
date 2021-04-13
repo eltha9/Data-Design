@@ -80,7 +80,7 @@ export default{
                     '03/2021',
                 ],
                 datasets: [{
-                        label: 'CO mm-m3',
+                        label: 'CO mg-m3',
                         data: this.values.co,
                         backgroundColor: [
                             '#A28AF0',
@@ -92,7 +92,7 @@ export default{
                         tension:0.2
                     },
                     {
-                        label: ' PM-10 µm-m3',
+                        label: ' PM-10 µg-m3',
                         data: this.values.pm10,
                         backgroundColor: [
                             '#FDC096',
@@ -104,7 +104,7 @@ export default{
                         tension:0.2
                     },
                     {
-                        label: ' PM-2.5 µm-m3',
+                        label: ' PM-2.5 µg-m3',
                         data: this.values.pm25,
                         backgroundColor: [
                             '#72DCB9',
