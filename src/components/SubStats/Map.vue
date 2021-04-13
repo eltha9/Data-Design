@@ -3,7 +3,7 @@
         <div class="map-info w-4/12 mr-6">
             <h2>Cartes des différentes villes françaises et de leur taux de pollution en période couvre feu</h2>
 
-            <input class="mt-4 mb-12 text-black-300" type="week" min="2020-01w">
+            <!-- <input class="mt-4 mb-12 text-black-300" type="week" min="2020-01w"> -->
 
             <div class="info-line flex flex-col text-black-300">
                 <span class="title text-lg mb-4">Polluants :</span>
