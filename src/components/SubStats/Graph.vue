@@ -27,10 +27,10 @@
                             <span class="mini-card-color bg-purple-100  "></span>
                             <span class="mini-card-title">Confinement</span>
                         </li>
-                        <li class="mini-card">
+                        <!-- <li class="mini-card">
                             <span class="mini-card-color rayure" ></span>
                             <span class="mini-card-title">Couvre feu</span>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 
